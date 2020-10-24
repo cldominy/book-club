@@ -1,5 +1,3 @@
-# project2
-
 CUSTOMER REVIEW
 
 purpose: allow employers / employees to write reviews about customers (good or bad)
@@ -55,4 +53,3 @@ Actions:
 
 Admin Ability
     -Remove review
-    .
