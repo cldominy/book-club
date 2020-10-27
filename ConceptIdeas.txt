@@ -1,7 +1,5 @@
-CUSTOMER REVIEW
-
-purpose: allow employers / employees to write reviews about customers (good or bad)
-    DISCLAIMER: "This application is for entertainment purposes."
+Books For Us 
+purpose: To create a globalized community of readers who write their personal review on novels aiding other readers in decision making for future book purchases and choices.  Readers can rate the book and type in their review.   
 
 functionality of the app
 
@@ -34,11 +32,11 @@ Actions:
         -replaces user password from database
 
     -Add Review
-        -insert [Name of store]
+        -insert [Name of book]
         -insert [Headline]
-        -insert [Description of experience with customer]
+        -insert [Review of book]
                 (X amount of characters useable)
-        -insert [Customer rating 1 - 5]
+        -insert [Reader rating 1 - 5]
     
     -Post Review
         -Review becomes available on "Reviews" page to be viewed by others
