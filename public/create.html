@@ -16,6 +16,18 @@
                 <a class="navbar-brand" href="/logout">
                     Logout
                 </a>
+                <a class="navbar-brand" href="/signup">
+                  Sign Up
+              </a>
+              <a class="navbar-brand" href="/login">
+                Log In
+            </a>
+            <a class="navbar-brand" href="/view">
+              View
+          </a>
+          <a class="navbar-brand" href="/create">
+            Create
+        </a>
             </div>
         </div>
     </nav>
@@ -23,50 +35,32 @@
         <div class="row">
             <div class="col-md-6 col-md-offset-3">
                 <h2>Welcome <span class="member-name"></span></h2>
-                <!-- SLIDER -->
                 
             </div>
         </div>
     </div>
-    <div class="slideshow-container">
-
-        <div class="mySlides ">
-          <div class="numbertext">1 / 3</div>
-          <img src="images/banner.jpg" style="width:100%">
-          <div class="bookinfo">
-            <div class="booktitle">The Old Man and the Sea</div>
-            <div class="bookheadline">"Worst Book...Ever!"</div>
-            <div class="bookrating">2 Liked 5 Disliked</div>
-            </div>
-          <div class="text preview1">Caption Text</div>
-        </div>
-        
-        <div class="mySlides ">
-          <div class="numbertext">2 / 3</div>
-          <img src="images/banner.jpg" style="width:100%">
-          <div class="bookinfo">
-          <div class="booktitle"></div>
-          <div class="bookheadline"></div>
-          <div class="bookrating"></div>
-          </div>
-          <div class="text preview 2">Caption Two</div>
-        </div>
-        
-        <div class="mySlides ">
-          <div class="numbertext">3 / 3</div>
-          <img src="images/banner.jpg" style="width:100%">
-          <div class="bookinfo">
-            <div class="booktitle"></div>
-            <div class="bookheadline"></div>
-            <div class="bookrating"></div>
-            </div>
-          <div class="text preview3">Caption Three</div>
-        </div>
-        
-        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-        <a class="next" onclick="plusSlides(1)">&#10095;</a>
-        
-        </div>
+    <div class="form container">
+        <form action="/my-handling-form-page" method="post">
+            <ul>
+             <li>
+               <label for="title">Title:</label>
+               <input type="text" id="title" name="user_name">
+             </li>
+             <li>
+               <label for="firstname">First Name</label>
+               <input type="text" id="firstname" name="user_email">
+             </li>
+             <li>
+               <label for="lastname">Last Name:</label>
+               <input type="text" id="title" name="user_name">
+             </li>
+             <li>
+                <label for="Review">Review:</label>
+                <input type="text" id="title" name="user_name">
+              </li>
+            </ul>
+           </form>
+    </div>
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script type="text/javascript" src="js/members.js"></script>
