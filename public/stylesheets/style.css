@@ -134,6 +134,32 @@ img {vertical-align: middle;}
   .prev, .next,.text {font-size: 11px}
 }
 
+/* Create Page*/
 #review {
   resize: vertical;
+}
+
+.filloutform {
+  color: rgb(240, 225, 194);
+  font-size: 30px;
+}
+
+#title {
+  background-color: rgb(241, 205, 126);
+  color: black;
+}
+
+#firstname {
+  background-color: rgb(241, 205, 126);
+  color: black;
+}
+
+#lastname{
+  background-color: rgb(241, 205, 126);
+  color: black;
+}
+
+#review{
+  background-color: rgb(241, 205, 126);
+  color: black;
 }
