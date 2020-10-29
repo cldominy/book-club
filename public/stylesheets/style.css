@@ -145,6 +145,8 @@ img {vertical-align: middle;}
 /* Create Page*/
 #review {
   resize: vertical;
+  height: auto;
+
 }
 
 .filloutform {
