@@ -134,13 +134,23 @@ img {vertical-align: middle;}
   .prev, .next,.text {font-size: 11px}
 }
 
+/* Nav bar */
+.navbar {
+  background-color: rgb(231, 198, 108);
+  border-color: rgb(231, 198, 108);
+  border: 3px;
+  border-style: solid;
+}
+
 /* Create Page*/
 #review {
   resize: vertical;
+  height: auto;
+
 }
 
 .filloutform {
-  color: rgb(240, 225, 194);
+  color: rgb(0, 0, 0);
   font-size: 30px;
 }
 
@@ -162,4 +172,12 @@ img {vertical-align: middle;}
 #review{
   background-color: rgb(241, 205, 126);
   color: black;
+  border: 2px;
+  border-style: solid;
+  border-color: black;
+}
+
+.form {
+  background-color: rgb(255, 255, 255);
+  opacity: 0.90;
 }

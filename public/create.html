@@ -56,7 +56,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-6 col-md-offset-3">
-                <h2>Create Review<span class="member-name"></span></h2>
+                <h2><span class="member-name"></span></h2>
                 
             </div>
         </div>
@@ -78,7 +78,7 @@
              </li>
              <li>
                 <label for="review">Review:</label>
-                <textarea style="width: 100%;" id="review"></textarea>
+                <textarea  maxlength="128" style="width: 100%;" id="review"></textarea>
               </li>
             </ul>
            </form>
@@ -87,6 +87,14 @@
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script type="text/javascript" src="js/members.js"></script>
+    <script>
+        var textarea = document.getElementById("review");
+var heightLimit = 200; /* Maximum height: 200px */
+textarea.oninput = function() {
+  textarea.style.height = ""; /* Reset the height*/
+  textarea.style.height = Math.min(textarea.scrollHeight, heightLimit) + "px";
+};
+    </script>
 
 </body>
 
