@@ -1,7 +1,5 @@
-// Creating our Review model
 module.exports = (sequelize, DataTypes) => {
     const Reviews = sequelize.define("Reviews", {
-        // The email cannot be null, and must be a proper email before creation
         title: {
             type: DataTypes.STRING,
             allowNull: false
