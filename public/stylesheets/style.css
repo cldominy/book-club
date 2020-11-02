@@ -181,3 +181,19 @@ img {vertical-align: middle;}
   background-color: rgb(255, 255, 255);
   opacity: 0.90;
 }
+
+/* Home Page*/
+.bookinfo {
+  background-color: rgb(241, 205, 126);
+  opacity: 0.80;
+  color: black;
+}
+
+.container {
+  background-color: rgb(241, 205, 126);
+}
+
+body {
+  font-family: 'Cutive Mono', monospace;
+  font-weight: 1000;
+}
