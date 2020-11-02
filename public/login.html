@@ -11,10 +11,63 @@
         <link href="https://fonts.googleapis.com/css2?family=Cutive+Mono&display=swap" rel="stylesheet">
 </head>
 
+<style>
+    html {
+        background-image: url(../public/images/booksbackground4.jpg);
+        -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: max-content;
+  position: relative;
+  background-color: rgb(241, 205, 126);
+    }
+
+    body {
+        background-image: url(../public/images/booksbackground4.jpg);
+        -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: max-content;
+  position: relative;
+    }
+    .row {
+        background-color: rgb(241, 205, 126);
+        opacity: 0.80;
+        font-weight: 1000;
+        color: black;
+    }
+    .logintab {
+        font-size: x-large;
+    }
+</style>
 <body>
+    <div class="filloutform">
     <nav class="navbar navbar-default">
         <div class="container-fluid">
-            <div class="navbar-header"></div>
+            <div class="navbar-header">
+                <a class="navbar-brand hometab" href="/home">
+                    Home
+                </a>
+                <a class="navbar-brand signuptab" href="/signup">
+                  Sign-Up
+              </a>
+              <a class="navbar-brand logintab" href="/login">
+                Log-In
+            </a>
+            <a class="navbar-brand viewtab" href="/view">
+              View
+          </a>
+          <a class="navbar-brand createtab" href="/create">
+            Create
+        </a>
+        <a class="navbar-brand logouttab" href="/logout">
+          Logout
+      </a>
+            </div>
         </div>
     </nav>
     <div class="container">
@@ -40,6 +93,7 @@
                 <p>Or Sign Up <a href="/">here</a></p>
             </div>
         </div>
+    </div>
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
