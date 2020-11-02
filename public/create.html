@@ -13,7 +13,7 @@
 
 <style>
     html {
-  background-image: url(../public/images/booksbackground1.jpg);
+  background-image: url(../public/images/booksbackground4.jpg);
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -23,35 +23,41 @@
   position: relative;
 }
 .filloutform {
-    background-image: url(../public/images/booksbackground1.jpg);
+    background-image: url(../public/images/booksbackground4.jpg);
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
   background-repeat: no-repeat;
 }
+.createtab {
+        font-size: x-large;
+    }
 </style>
 
 <body>
     <div class="filloutform">
-    <nav class="navbar navbar-default">
+      <nav class="navbar navbar-default">
         <div class="container-fluid">
             <div class="navbar-header">
-                <a class="navbar-brand" href="/logout">
-                    Logout
+                <a class="navbar-brand hometab" href="/home">
+                    Home
                 </a>
-                <a class="navbar-brand" href="/signup">
-                  Sign Up
+                <a class="navbar-brand signuptab" href="/signup">
+                  Sign-Up
               </a>
-              <a class="navbar-brand" href="/login">
-                Log In
+              <a class="navbar-brand logintab" href="/login">
+                Log-In
             </a>
-            <a class="navbar-brand" href="/view">
+            <a class="navbar-brand viewtab" href="/view">
               View
           </a>
-          <a class="navbar-brand" href="/create">
+          <a class="navbar-brand createtab" href="/create">
             Create
         </a>
+        <a class="navbar-brand logouttab" href="/logout">
+          Logout
+      </a>
             </div>
         </div>
     </nav>
