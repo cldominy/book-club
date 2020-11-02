@@ -44,6 +44,18 @@
     .viewtab {
         font-size: x-large;
     }
+
+    #upvote {
+        background-image: url(../public/images/uparrow.jpg);
+        width: 30px;
+        height: 30px;
+    }
+    
+    #downvote {
+        background-image: url(../public/images/downarrow.jpg);
+        width: 30px;
+        height: 30px;
+    }
 </style>
 
 <body>
@@ -105,6 +117,14 @@
                 <div class="review">
                     <!-- INSERT REVIEW HERE -->
                 </div>
+              </li>
+              <li>
+                <label for="rating">Rating:</label>
+                <div class="rating">
+                    <!-- INSERT Rating HERE -->
+                </div>
+                <button id="upvote"></button>
+                <button id="downvote"></button>
               </li>
             </ul>
            </form>
