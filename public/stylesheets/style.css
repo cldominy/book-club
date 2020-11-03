@@ -140,6 +140,15 @@ img {vertical-align: middle;}
   border-color: rgb(231, 198, 108);
   border: 3px;
   border-style: solid;
+  color: black;
+}
+
+
+.row {
+  background-color: rgb(241, 205, 126);
+  opacity: 0.90;
+  font-weight: 1000;
+  color: black;
 }
 
 /* Create Page*/
@@ -192,4 +201,69 @@ img {vertical-align: middle;}
 body {
   font-family: 'Cutive Mono', monospace;
   font-weight: 1000;
+  background-image: url(../images/booksbackground4.jpg);
+  -webkit-background-size: cover;
+-moz-background-size: cover;
+-o-background-size: cover;
+background-size: cover;
+background-repeat: no-repeat;
+height: max-content;
+position: relative;
+}
+
+
+/* background image */
+
+html {
+  background-image: url(../images/booksbackground4.jpg);
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: max-content;
+  position: relative;
+  background-color: rgb(241, 205, 126);
+}
+.filloutform {
+    background-image: url(../images/booksbackground4.jpg);
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+#upvote {
+  background-image: url(../images/uparrow.jpg);
+  width: 30px;
+  height: 30px;
+}
+
+#downvote {
+  background-image: url(../images/downarrow.jpg);
+  width: 30px;
+  height: 30px;
+}
+
+/* tabs */
+
+.createtab {
+  font-size: x-large;
+}
+
+.logintab {
+  font-size: x-large;
+}
+
+.hometab {
+  font-size: x-large;
+}
+
+.viewtab {
+  font-size: x-large;
+}
+
+.signuptab {
+  font-size: x-large;
 }
