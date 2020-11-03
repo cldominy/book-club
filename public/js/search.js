@@ -1,16 +1,17 @@
-$("#submitSearch").on("click", () => {
-    const title = $("#searchBook").val().replace("%20", "+");
-    $.ajax({
-        url: "/api/search/" + title,
-        method: "GET"
-    }).then((results) => {
+$(document).ready(() => {
+    $("#submitSearch").on("click", () => {
+        const title = $("#searchBook").val().replace("%20", "+");
+        $.ajax({
+            url: "/api/search/" + title,
+            method: "GET"
+        }).then((results) => {
         
-        console.log(results);
-        for (let i = 0; i < results.length; i++) {
-            if (results[i].volumeInfo.imageLinks === undefined){
-                results[i].volumeInfo.imageLinks = "";
-            }
-            $("#results").append(`<li class="list-group-item">
+            console.log(results);
+            for (let i = 0; i < results.length; i++) {
+                if (results[i].volumeInfo.imageLinks === undefined) {
+                    results[i].volumeInfo.imageLinks = "";
+                }
+                $("#results").append(`<li class="list-group-item">
             <div class="row">
                 <div class="col-md-1">
                      
@@ -25,7 +26,7 @@ $("#submitSearch").on("click", () => {
             </div>
             
             <!-- Button trigger modal -->
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-bookTitle="${results[i].volumeInfo.title}">
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
               Write a Review
             </button>
             
@@ -42,20 +43,70 @@ $("#submitSearch").on("click", () => {
       <div class="modal-body">
         <form>
           <div class="form-group">
-            <textarea class="form-control" id="bookReview"></textarea>
-            <button id="submitReview">Submit</button>
+            <textarea class="form-control" id="bookReview${i}"></textarea>
+            <button type="button" id="submitReview${i}" data-bookTitle="${results[i].volumeInfo.title}" data-authorName="${results[i].volumeInfo.authors}">Submit</button>
           </div>
         </form>
       </div>
-        </li>`);       
-        }
+        </li>`);
+                // eslint-disable-next-line
+              $(document).on("click", `#submitReview${i}`, function (event) {
+                    event.preventDefault();
+                    event.stopPropagation();
+                    const button = $(this);
+                    const bookTitle = button.attr("data-bookTitle");
+                    const authorName = button.attr("data-authorName");
+                    const bookReview = $("#bookReview" + i);
+                    const reviewData = {
+                        title: bookTitle,
+                        authorName: authorName,
+                        review: bookReview.val(),
+                    };
+                    console.log(reviewData);
+                    if (
+                        !reviewData.title ||
+                        !reviewData.authorName ||
+                        !reviewData.review
+                    ) {
+                        console.log("Error!");
+                    }
+                    logReview(
+                        reviewData.title,
+                        reviewData.authorName,
+                        reviewData.review
+                    );
+                });
+            }
+        });
     });
-});
 
-$("#submitReview").on("click", () => {
-    event.preventDefault();
-    // const bookTitle = button.data("bookTitle");
-    // const authorName = button.data("bookTitle");
-    alert($("#myField").val());
+    function logReview(title, authorName, review) {
+        $.post("/api/reviews", {
+            title:title,
+            authorName:authorName,
+            review:review,
+        })
+            .then(() => {
+                console.log("Success!");
+                // window.location.replace("/display");
+            })
+            .catch(handleReviewErrors);
+    }
 
+    function handleReviewErrors(err) {
+        let message;
+        if (
+            err &&
+            err.responseJSON &&
+            err.responseJSON.errors &&
+            err.responseJSON.errors[0]
+        ) {
+            message = err.responseJSON.errors[0].message;
+        } else {
+            message = "An unknown error occurred; please try again later";
+        }
+        console.warn(`Review Form error; message: ${message}`);
+        $("#alert .msg").text(message);
+        $("#alert").fadeIn(500);
+    }
 });
