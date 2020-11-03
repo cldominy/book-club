@@ -4,13 +4,9 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.STRING,
             allowNull: false
         },
-        firstname: {
+        authorName: {
             type: DataTypes.STRING,
             allowNull: false,
-        },
-        lastname: {
-            type: DataTypes.STRING,
-            allowNull: false
         },
         review: {
             type: DataTypes.STRING,
