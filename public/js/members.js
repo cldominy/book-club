@@ -35,9 +35,9 @@ function showSlides(n) {
     dots[slideIndex-1].className += " active";
 }
 
-var textarea = document.getElementById("review");
-var heightLimit = 200; /* Maximum height: 200px */
+const textarea = document.getElementById("review");
+const heightLimit = 200; /* Maximum height: 200px */
 textarea.oninput = function() {
-  textarea.style.height = ""; /* Reset the height*/
-  textarea.style.height = Math.min(textarea.scrollHeight, heightLimit) + "px";
+    textarea.style.height = ""; /* Reset the height*/
+    textarea.style.height = Math.min(textarea.scrollHeight, heightLimit) + "px";
 };
