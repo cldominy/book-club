@@ -52,4 +52,26 @@ module.exports = (app) => {
             res.render("display", viewData);
         });
     });
+
+    app.get("/profile", (req, res) => {
+        db.Reviews.findAll(
+            {
+                where: {
+                    UserID: req.user.id
+                },
+                include: [db.User]
+            }
+        ).then( (data) => {
+            const viewData = {
+                Reviews: data.map((entry) => {
+                    const newData = entry.dataValues;
+                    const createdTime = moment(newData.createdAt, "YYYY-MM-DD HH:mm:ss").format("MMM Do YY");
+                    newData.createdAt = createdTime; 
+                    return newData;
+                })
+            };
+            console.log(viewData);
+            res.render("display", viewData);
+        });
+    });
 };
