@@ -21,7 +21,7 @@ module.exports = (sequelize, DataTypes) => {
         }
     });
     Reviews.associate = (db) => {
-        Reviews.belongsTo(db.Users, {
+        Reviews.belongsTo(db.User, {
             foreignKey: {
                 allowNull:false
             }
