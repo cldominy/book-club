@@ -1,6 +1,7 @@
 // Requiring our models and passport as we've configured it
 const db = require("../models");
 const passport = require("../config/passport");
+const axios = require("axios");
 
 module.exports = (app) => {
     // Using the passport.authenticate middleware with our local strategy.
@@ -12,6 +13,13 @@ module.exports = (app) => {
             email: req.user.email,
             username: req.body.username,
             id: req.user.id
+        });
+    });
+    app.get("/api/search/:title", (req, res) => {
+        const title = req.params.title;
+        axios.get("https://www.googleapis.com/books/v1/volumes?q=" + title).then(results => {
+            // console.log(results.data.items);
+            res.json(results.data.items);
         });
     });
 
