@@ -1,4 +1,5 @@
 const db = require("../models");
+const isAuthenticated = require("../config/middleware/isAuthenticated");
 
 module.exports = (app) => {
     app.get("/api/reviews", (req, res) => {
@@ -14,8 +15,11 @@ module.exports = (app) => {
         });
     });
 
-    app.post("/api/reviews", (req, res) => {
-        db.Reviews.create(req.body).then((dbReview) => {
+    app.post("/api/reviews", isAuthenticated, (req, res) => {
+        const userID = req.user.id;
+        const data = req.body;
+        data.UserId = userID;
+        db.Reviews.create(data).then((dbReview) => {
             res.status(201).json(dbReview);
         });
     });
