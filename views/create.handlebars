@@ -1,28 +1,5 @@
 <div class="filloutform">
-      <nav class="navbar navbar-default">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <a class="navbar-brand hometab" href="/home">
-                    Home
-                </a>
-                <a class="navbar-brand signuptab" href="/signup">
-                  Sign-Up
-              </a>
-              <a class="navbar-brand logintab" href="/login">
-                Log-In
-            </a>
-            <a class="navbar-brand viewtab" href="/view">
-              View
-          </a>
-          <a class="navbar-brand createtab" href="/create">
-            Create
-        </a>
-        <a class="navbar-brand logouttab" href="/logout">
-          Logout
-      </a>
-            </div>
-        </div>
-    </nav>
+ {{>navbar   active_createtab=true}}
     <div class="container">
         <div class="row">
             <div class="col-md-6 col-md-offset-3">

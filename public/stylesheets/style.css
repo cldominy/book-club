@@ -248,22 +248,6 @@ html {
 
 /* tabs */
 
-.createtab {
-  font-size: x-large;
-}
-
-.logintab {
-  font-size: x-large;
-}
-
-.hometab {
-  font-size: x-large;
-}
-
-.viewtab {
-  font-size: x-large;
-}
-
-.signuptab {
-  font-size: x-large;
+.active {
+  font-size: x-large
 }
