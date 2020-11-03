@@ -18,6 +18,7 @@ module.exports = (app) => {
     app.post("/api/reviews", isAuthenticated, (req, res) => {
         const userID = req.user.id;
         const data = req.body;
+        console.log(data);
         data.UserId = userID;
         db.Reviews.create(data).then((dbReview) => {
             res.status(201).json(dbReview);
