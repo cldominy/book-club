@@ -7,15 +7,70 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/lumen/bootstrap.min.css">
     <link href="stylesheets/style.css" rel="stylesheet">
+        <!-- font choice ? -->
+        <link href="https://fonts.googleapis.com/css2?family=Cutive+Mono&display=swap" rel="stylesheet">
 </head>
+
+<style>
+    html {
+        background-image: url(../public/images/booksbackground3.jpg);
+        -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: max-content;
+  position: relative;
+  background-color: rgb(241, 205, 126);
+    }
+
+    body {
+        background-image: url(../public/images/booksbackground3.jpg);
+        -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: max-content;
+  position: relative;
+    }
+
+    .row {
+        background-color: rgb(241, 205, 126);
+        opacity: 0.80;
+        font-weight: 1000;
+        color: black;
+    }
+    .signuptab {
+        font-size: x-large;
+    }
+</style>
 
 <body>
     <nav class="navbar navbar-default">
         <div class="container-fluid">
             <div class="navbar-header">
+                <a class="navbar-brand hometab" href="/home">
+                    Home
+                </a>
+                <a class="navbar-brand signuptab" href="/signup">
+                  Sign-Up
+              </a>
+              <a class="navbar-brand logintab" href="/login">
+                Log-In
+            </a>
+            <a class="navbar-brand viewtab" href="/view">
+              View
+          </a>
+          <a class="navbar-brand createtab" href="/create">
+            Create
+        </a>
+        <a class="navbar-brand logouttab" href="/logout">
+          Logout
+      </a>
             </div>
         </div>
-    </nav>
+    </nav>>
     <div class="container">
         <div class="row">
             <div class="col-md-6 col-md-offset-3">

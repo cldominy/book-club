@@ -54,8 +54,8 @@ $("#submitSearch").on("click", () => {
 
 $("#submitReview").on("click", () => {
     event.preventDefault();
-    const bookTitle = button.data("bookTitle");
-    const authorName = button.data("bookTitle");
+    // const bookTitle = button.data("bookTitle");
+    // const authorName = button.data("bookTitle");
     alert($("#myField").val());
 
 });
