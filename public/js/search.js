@@ -1,6 +1,7 @@
 $(document).ready(() => {
     $("#submitSearch").on("click", () => {
         const title = $("#searchBook").val().replace("%20", "+");
+        $("#results").empty("");
         $.ajax({
             url: "/api/search/" + title,
             method: "GET"
@@ -13,12 +14,22 @@ $(document).ready(() => {
                 }
                 $("#results").append(`<li class="list-group-item">
             <div class="row">
-                <div class="col-md-1">
+                <div class="col-sm-1 text-center">
                      
                     <img class="img-fluid" src="${results[i].volumeInfo.imageLinks.thumbnail}" onerror="this.onerror=null; this.src='images/default.png'" /> 
     
+                    <div class="row">
+                    <div class="col-12 col-sm-12 text-center">
+                    <br>
+                    <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#reviewModal">
+                    Write a Review
+                  </button>
+                    </div>
+                  </div>
+
+
                 </div>
-                <div class="col-md-11">
+                <div class="col-sm-11">
                <h3>${results[i].volumeInfo.title}</h3>
               <h4>By ${results[i].volumeInfo.authors}</h4>
                   <p>${results[i].volumeInfo.description}</p>
@@ -26,16 +37,14 @@ $(document).ready(() => {
             </div>
             
             <!-- Button trigger modal -->
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-              Write a Review
-            </button>
+
             
             <!-- Modal -->
-            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal fade" id="reviewModal" tabindex="-1" role="dialog" aria-labelledby="reviewModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Your Review</h5>
+        <h5 class="modal-title" id="reviewModalLabel">Your Review</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -44,7 +53,8 @@ $(document).ready(() => {
         <form>
           <div class="form-group">
             <textarea class="form-control" id="bookReview${i}"></textarea>
-            <button type="button" id="submitReview${i}" data-bookTitle="${results[i].volumeInfo.title}" data-authorName="${results[i].volumeInfo.authors}">Submit</button>
+            <br>
+            <button type="button" class="btn btn-primary" id="submitReview${i}" data-bookTitle="${results[i].volumeInfo.title}" data-authorName="${results[i].volumeInfo.authors}">Submit</button>
           </div>
         </form>
       </div>
