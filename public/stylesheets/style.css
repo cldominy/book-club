@@ -155,22 +155,22 @@ img {vertical-align: middle;}
 }
 
 #title {
-  background-color: rgb(241, 205, 126);
+  background-color: white
   color: black;
 }
 
 #firstname {
-  background-color: rgb(241, 205, 126);
+  background-color: white
   color: black;
 }
 
 #lastname{
-  background-color: rgb(241, 205, 126);
+  background-color: white
   color: black;
 }
 
 #review{
-  background-color: rgb(241, 205, 126);
+  background-color: white
   color: black;
   border: 2px;
   border-style: solid;
@@ -178,6 +178,18 @@ img {vertical-align: middle;}
 }
 
 .form {
-  background-color: rgb(255, 255, 255);
+  background-color: rgb(241, 205, 126);
   opacity: 0.90;
+}
+
+/* Home Page*/
+.bookinfo {
+  background-color: rgb(241, 205, 126);
+  opacity: 0.80;
+  color: black;
+}
+
+body {
+  font-family: 'Cutive Mono', monospace;
+  font-weight: 1000;
 }
