@@ -26,8 +26,6 @@ $(document).ready(() => {
                   </button>
                     </div>
                   </div>
-
-
                 </div>
                 <div class="col-sm-11">
                <h3>${results[i].volumeInfo.title}</h3>
@@ -37,7 +35,6 @@ $(document).ready(() => {
             </div>
             
             <!-- Button trigger modal -->
-
             
             <!-- Modal -->
             <div class="modal fade" id="reviewModal" tabindex="-1" role="dialog" aria-labelledby="reviewModalLabel" aria-hidden="true">
