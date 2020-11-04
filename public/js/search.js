@@ -33,26 +33,26 @@ $(document).ready(() => {
             </div>
             
             <!-- Button trigger modal -->
-            
+
             <!-- Modal -->
             <div class="modal fade" id="reviewModal" tabindex="-1" role="dialog" aria-labelledby="reviewModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="reviewModalLabel">Your Review</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <form>
-          <div class="form-group">
-            <textarea class="form-control" id="bookReview${i}"></textarea>
-            <br>
-            <button type="button" class="btn btn-primary" id="submitReview${i}" data-bookTitle="${results[i].volumeInfo.title}" data-authorName="${results[i].volumeInfo.authors}">Submit</button>
-          </div>
-        </form>
-      </div>
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="reviewModalLabel">Your Review</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <form>
+                    <div class="form-group">
+                      <textarea class="form-control" id="bookReview${i}"></textarea>
+                      <br>
+                      <button type="button" class="btn btn-primary" id="submitReview${i}" data-bookTitle="${results[i].volumeInfo.title}" data-authorName="${results[i].volumeInfo.authors}">Submit</button>
+                    </div>
+                  </form>
+                </div>
         </li>`);
                 // eslint-disable-next-line
               $(document).on("click", `#submitReview${i}`, function (event) {
