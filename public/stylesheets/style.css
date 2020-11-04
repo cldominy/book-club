@@ -251,3 +251,10 @@ html {
 .active {
   font-size: x-large
 }
+
+/* search page */
+
+#searchBook {
+  width: 50%;
+  height: 30px;
+}

@@ -1,16 +1,17 @@
-<div class="row">
-<div class="col-md-10 text-center mr-auto ml-auto">
-    <h1>Write Your Review!</h1>
-    <h4>Use the search bar below to find the book you want to review</h4>
-                    <div class="input-group mb-3 ">
-                        
-                            <input class="form-control" type="text" placeholder="Book Title" aria-label="Search" id="searchBook">
-                            <div class="input-group-append">
-                                <button class="btn btn-primary my-2 my-sm-0" type="submit" id="submitSearch">Search!</button>
-                            </div>
-                      </div>
-</div>
-</div>
-
-<ul id="results" class="list-group">
-</ul>
+<div class="container">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+                <h2><span class="member-name"></span></h2>
+            </div>
+        </div>
+    </div>
+    <div class="form container">
+        <form action="/my-handling-form-page" method="post">
+            <input type="text" id="searchBook">
+            <button id="submitSearch">Search!</button>
+            
+            <ul id="results" class="list-group">
+            </ul>
+           </form>
+    </div>
+    </div>
