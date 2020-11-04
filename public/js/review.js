@@ -5,7 +5,7 @@ $(document).ready(() => {
     const AuthorLastName = $("#author-last");
     const bookReview = $("#book-review");
 
-    bookForm.on(submit, (event) => {
+    bookForm.on("submit", (event) => {
         event.preventDefault();
         const reviewData = {
             title: bookTitle.val(),
@@ -40,7 +40,8 @@ $(document).ready(() => {
             review:review,
         })
             .then(() => {
-                window.location.replace("/display");
+                console.log("Success!");
+                // window.location.replace("/display");
             })
             .catch(handleReviewErrors);
     }

@@ -1,0 +1,21 @@
+ {{>navbar   active_displaytab=true}}
+<div class="container">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+                <h2><span class="member-name"></span></h2>
+            </div>
+        </div>
+        <div class="row">
+            {{#each Reviews}}
+    <div class="card bg-light mb-3" style="max-width: 18rem;">
+        <h4 class="card-header">{{this.title}}</h4>
+        <div class="card-body">
+            {{!--  --}}
+          <h6 class="card-title">{{this.firstname}} {{this.lastname}}</h6>
+          <p class="card-text">{{this.createdAt}}</p>
+          <p class="card-text">{{this.review}}</p>
+        </div>
+      </div>
+      {{/each}}
+      </div>
+    </div>

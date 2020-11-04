@@ -140,6 +140,15 @@ img {vertical-align: middle;}
   border-color: rgb(231, 198, 108);
   border: 3px;
   border-style: solid;
+  color: black;
+}
+
+
+.row {
+  background-color: rgb(241, 205, 126);
+  opacity: 0.90;
+  font-weight: 1000;
+  color: black;
 }
 
 /* Create Page*/
@@ -155,22 +164,22 @@ img {vertical-align: middle;}
 }
 
 #title {
-  background-color: rgb(241, 205, 126);
+  background-color: white;
   color: black;
 }
 
 #firstname {
-  background-color: rgb(241, 205, 126);
+  background-color: white;
   color: black;
 }
 
 #lastname{
-  background-color: rgb(241, 205, 126);
+  background-color: white;
   color: black;
 }
 
 #review{
-  background-color: rgb(241, 205, 126);
+  background-color: white;
   color: black;
   border: 2px;
   border-style: solid;
@@ -178,6 +187,67 @@ img {vertical-align: middle;}
 }
 
 .form {
-  background-color: rgb(255, 255, 255);
+  background-color: rgb(241, 205, 126);
   opacity: 0.90;
+}
+
+/* Home Page*/
+.bookinfo {
+  background-color: rgb(241, 205, 126);
+  opacity: 0.80;
+  color: black;
+}
+
+body {
+  font-family: 'Cutive Mono', monospace;
+  font-weight: 1000;
+  background-image: url(../images/booksbackground4.jpg);
+  -webkit-background-size: cover;
+-moz-background-size: cover;
+-o-background-size: cover;
+background-size: cover;
+background-repeat: no-repeat;
+height: max-content;
+position: relative;
+}
+
+
+/* background image */
+
+html {
+  background-image: url(../images/booksbackground4.jpg);
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: max-content;
+  position: relative;
+  background-color: rgb(241, 205, 126);
+}
+.filloutform {
+    background-image: url(../images/booksbackground4.jpg);
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+#upvote {
+  background-image: url(../images/uparrow.jpg);
+  width: 30px;
+  height: 30px;
+}
+
+#downvote {
+  background-image: url(../images/downarrow.jpg);
+  width: 30px;
+  height: 30px;
+}
+
+/* tabs */
+
+.active {
+  font-size: x-large
 }

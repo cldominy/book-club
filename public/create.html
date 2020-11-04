@@ -7,49 +7,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/lumen/bootstrap.min.css">
     <link href="stylesheets/style.css" rel="stylesheet">
+      <!-- font choice ? -->
+      <link href="https://fonts.googleapis.com/css2?family=Cutive+Mono&display=swap" rel="stylesheet">
 </head>
 
 <style>
-    html {
-  background-image: url(../public/images/booksbackground1.jpg);
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  background-repeat: no-repeat;
-  height: max-content;
-  position: relative;
-}
-.filloutform {
-    background-image: url(../public/images/booksbackground1.jpg);
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  background-repeat: no-repeat;
-}
+
+
 </style>
 
 <body>
+
     <div class="filloutform">
-    <nav class="navbar navbar-default">
+      <nav class="navbar navbar-default">
         <div class="container-fluid">
             <div class="navbar-header">
-                <a class="navbar-brand" href="/logout">
-                    Logout
+                <a class="navbar-brand hometab" href="/home">
+                    Home
                 </a>
-                <a class="navbar-brand" href="/signup">
-                  Sign Up
+                <a class="navbar-brand signuptab" href="/signup">
+                  Sign-Up
               </a>
-              <a class="navbar-brand" href="/login">
-                Log In
+              <a class="navbar-brand logintab" href="/login">
+                Log-In
             </a>
-            <a class="navbar-brand" href="/view">
+            <a class="navbar-brand viewtab" href="/display">
               View
           </a>
-          <a class="navbar-brand" href="/create">
+          <a class="navbar-brand createtab" href="/create">
             Create
         </a>
+        <a class="navbar-brand logouttab" href="/logout">
+          Logout
+      </a>
             </div>
         </div>
     </nav>
@@ -62,23 +52,23 @@
         </div>
     </div>
     <div class="form container">
-        <form action="/my-handling-form-page" method="post">
+        <form class="review">
             <ul>
              <li>
-               <label for="title">Title:</label>
-               <input type="text" style="width: 100%;"id="title">
+               <label for="title">Book Title:</label>
+               <input type="text" style="width: 100%;"id="book-title">
              </li>
              <li>
                <label for="firstname"> Author's First Name:</label>
-               <input type="text" style="width: 100%;" id="firstname">
+               <input type="text" style="width: 100%;" id="author-first">
              </li>
              <li>
                <label for="lastname">Author's Last Name:</label>
-               <input type="text" style="width: 100%;" id="lastname">
+               <input type="text" style="width: 100%;" id="author-last">
              </li>
              <li>
                 <label for="review">Review:</label>
-                <textarea  maxlength="128" style="width: 100%;" id="review"></textarea>
+                <textarea  maxlength="128" style="width: 100%;" id="book-review"></textarea>
               </li>
               <l>
                 <button for="submit">Submit</button>
@@ -90,13 +80,10 @@
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script type="text/javascript" src="js/members.js"></script>
+    <script type="text/javascript" src="js/review.js"></script>
+    <script type="text/javascript" src="js/search.js"></script>
     <script>
-        var textarea = document.getElementById("review");
-var heightLimit = 200; /* Maximum height: 200px */
-textarea.oninput = function() {
-  textarea.style.height = ""; /* Reset the height*/
-  textarea.style.height = Math.min(textarea.scrollHeight, heightLimit) + "px";
-};
+        
     </script>
 
 </body>

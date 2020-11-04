@@ -4,13 +4,9 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.STRING,
             allowNull: false
         },
-        firstname: {
+        authorName: {
             type: DataTypes.STRING,
             allowNull: false,
-        },
-        lastname: {
-            type: DataTypes.STRING,
-            allowNull: false
         },
         review: {
             type: DataTypes.STRING,
@@ -21,7 +17,7 @@ module.exports = (sequelize, DataTypes) => {
         }
     });
     Reviews.associate = (db) => {
-        Reviews.belongsTo(db.Users, {
+        Reviews.belongsTo(db.User, {
             foreignKey: {
                 allowNull:false
             }
