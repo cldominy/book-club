@@ -1,5 +1,4 @@
 // Requiring path to so we can use relative routes to our HTML files
-const path = require("path");
 const db = require("../models");
 const moment = require("moment");
 
@@ -10,27 +9,35 @@ module.exports = (app) => {
     app.get("/", (req, res) => {
         // If the user already has an account send them to the members page
         if (req.user) {
-            res.redirect("/members");
+            res.render("members");
         }
-        res.sendFile(path.join(__dirname, "../public/signup.html"));
+        res.render("signup");
     });
 
     app.get("/login", (req, res) => {
         // If the user already has an account send them to the members page
         if (req.user) {
-            res.redirect("/members");
+            res.render("members");
         }
-        res.sendFile(path.join(__dirname, "../public/login.html"));
+        res.render("login");
+    });
+
+    app.get("/signup", (req, res) => {
+        // If the user already has an account send them to the members page
+        if (req.user) {
+            res.render("members");
+        }
+        res.render("signup");
     });
 
     // Here we've add our isAuthenticated middleware to this route.
     // If a user who is not logged in tries to access this route they will be redirected to the signup page
     app.get("/members", isAuthenticated, (req, res) => {
-        res.sendFile(path.join(__dirname, "../public/members.html"));
+        res.render("members");
     });
 
     app.get("/create", isAuthenticated, (req, res) => {
-        res.sendFile(path.join(__dirname, "../public/create.html"));
+        res.render("create");
     });
 
  
