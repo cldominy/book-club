@@ -97,8 +97,8 @@ $(document).ready(() => {
             review:review,
         })
             .then(() => {
-                console.log("Success!");
-                // window.location.replace("/display");
+                alert("Review Successfully Added!");
+                window.location.replace("/profile");
             })
             .catch(handleReviewErrors);
     }
