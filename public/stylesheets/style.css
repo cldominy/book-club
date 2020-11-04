@@ -143,6 +143,20 @@ img {vertical-align: middle;}
   color: black;
 }
 
+.signupBox{
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.list-group-item{
+  margin: 10px;
+  border-radius: 5px;
+}
+
+.searchRows{
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
 
 .row {
   background-color: rgb(241, 205, 126);

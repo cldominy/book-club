@@ -13,7 +13,7 @@ $(document).ready(() => {
                     results[i].volumeInfo.imageLinks = "";
                 }
                 $("#results").append(`<li class="list-group-item">
-            <div class="row">
+            <div class="row searchRows">
                 <div class="col-sm-1 text-center">
                      
                     <img class="img-fluid" src="${results[i].volumeInfo.imageLinks.thumbnail}" onerror="this.onerror=null; this.src='images/default.png'" /> 

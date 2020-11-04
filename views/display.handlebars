@@ -1,17 +1,17 @@
  {{>navbar   active_displaytab=true}}
 <div class="container">
-        <div class="row">
-            <div class="col-md-6 col-md-offset-3">
+        <div class="row signupBox">
+            <div class="col-md-12 text-center">
                 <h2><span>Recent Reviews</span></h2>
             </div>
         </div>
         <div class="row">
             {{#each Reviews}}
     <div class="card bg-light mb-3" style="max-width: 18rem;">
-        <h4 class="card-header">{{this.title}}</h4>
-        <div class="card-body">
+        <h4 class="card-header d-flex align-items-center justify-content-center h-100">{{this.title}}</h4>
+        <div class="card-body flex-column h-100">
             {{!--  --}}
-          <h6 class="card-title">{{this.firstname}} {{this.lastname}}</h6>
+          <h6 class="card-title">By {{this.authorName}}</h6>
           <p class="card-text">{{this.createdAt}}</p>
           <p class="card-text">{{this.review}}</p>
         </div>
