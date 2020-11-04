@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Passport Authentication</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- <link href="stylesheets/style.css" rel="stylesheet"> -->
+</head>
+
+<style>
+    html {
+  background-image: url(../public/images/booksbackground1.jpg);
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: max-content;
+  position: relative;
+}
+.filloutform {
+    background-image: url(../public/images/booksbackground1.jpg);
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+</style>
+
+<body>
+    <div class="filloutform">
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/logout">
+                    Logout
+                </a>
+                <a class="navbar-brand" href="/signup">
+                  Sign Up
+              </a>
+              <a class="navbar-brand" href="/login">
+                Log In
+            </a>
+            <a class="navbar-brand" href="/view">
+              View
+          </a>
+          <a class="navbar-brand" href="/create">
+            Create
+        </a>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+                <h2>Most Recent Reviews</h2>
+                
+            </div>
+        </div>
+    </div>
+    <div class="card bg-light mb-3" style="max-width: 18rem;">
+        <div class="card-header">Header</div>
+        <div class="card-body">
+          <h5 class="card-title">Light card title</h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        </div>
+      </div>
+      <div class="card text-white bg-danger mb-3" style="max-width: 18rem;">
+        <div class="card-header">Header</div>
+        <div class="card-body">
+          <h5 class="card-title">Danger card title</h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        </div>
+      </div>
+    </div>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="js/members.js"></script>
+    <script>
+        var textarea = document.getElementById("review");
+var heightLimit = 200; /* Maximum height: 200px */
+textarea.oninput = function() {
+  textarea.style.height = ""; /* Reset the height*/
+  textarea.style.height = Math.min(textarea.scrollHeight, heightLimit) + "px";
+};
+    </script>
+
+</body>
+
+</html>
