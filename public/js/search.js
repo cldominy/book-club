@@ -7,6 +7,9 @@ $(document).ready(() => {
             method: "GET"
         }).then((results) => {
             for (let i = 0; i < results.length; i++) {
+                if (results[i].volumeInfo.description === undefined) {
+                    results[i].volumeInfo.description = "Sorry, no description is available for this title.";
+                }
                 if (results[i].volumeInfo.imageLinks === undefined) {
                     results[i].volumeInfo.imageLinks = "";
                 }
@@ -19,7 +22,7 @@ $(document).ready(() => {
                     <div class="row">
                     <div class="col-12 col-sm-12 text-center">
                     <br>
-                    <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#reviewModal">
+                    <button type="button" class="btn btn-primary btn-sm" id="writeReview${i}">
                     Write a Review
                   </button>
                     </div>
@@ -32,28 +35,23 @@ $(document).ready(() => {
                 </div>
             </div>
             
-            <!-- Button trigger modal -->
-
-            <!-- Modal -->
-            <div class="modal fade" id="reviewModal" tabindex="-1" role="dialog" aria-labelledby="reviewModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="reviewModalLabel">Your Review</h5>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
-                </div>
-                <div class="modal-body">
+            
                   <form>
-                    <div class="form-group">
-                      <textarea class="form-control" id="bookReview${i}"></textarea>
+                    <div class="form-group signupBox" id="hiddenForm${i}" style="display: none;">
+                      <textarea class="form-control" placeholder="Write your review here" id="bookReview${i}"></textarea>
                       <br>
-                      <button type="button" class="btn btn-primary" id="submitReview${i}" data-bookTitle="${results[i].volumeInfo.title}" data-authorName="${results[i].volumeInfo.authors}">Submit</button>
+                      <button type="button" class="btn btn-primary float-right" id="submitReview${i}" data-bookTitle="${results[i].volumeInfo.title}" data-authorName="${results[i].volumeInfo.authors}">Submit</button>
                     </div>
                   </form>
-                </div>
         </li>`);
+
+                // eslint-disable-next-line
+                $(document).on("click", `#writeReview${i}`, function (event) {
+                    event.preventDefault();
+                    event.stopPropagation();
+                    $(`#hiddenForm${i}`).toggle();
+                });
+
                 // eslint-disable-next-line
               $(document).on("click", `#submitReview${i}`, function (event) {
                     event.preventDefault();
