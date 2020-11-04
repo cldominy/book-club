@@ -148,14 +148,14 @@ img {vertical-align: middle;}
   margin-bottom: 20px;
 }
 
-.list-group-item{
-  margin: 10px;
-  border-radius: 5px;
-}
-
 .searchRows{
   padding-top: 10px;
   padding-bottom: 10px;
+}
+
+.list-group-item{
+  margin: 10px;
+  border-radius: 5px;
 }
 
 .row {
