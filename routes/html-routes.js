@@ -76,7 +76,7 @@ module.exports = (app) => {
                     return newData;
                 })
             };
-            res.render("display", viewData);
+            res.render("profile", viewData);
         });
     });
 };
