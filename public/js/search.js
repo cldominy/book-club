@@ -6,8 +6,6 @@ $(document).ready(() => {
             url: "/api/search/" + title,
             method: "GET"
         }).then((results) => {
-        
-            console.log(results);
             for (let i = 0; i < results.length; i++) {
                 if (results[i].volumeInfo.imageLinks === undefined) {
                     results[i].volumeInfo.imageLinks = "";
@@ -26,8 +24,6 @@ $(document).ready(() => {
                   </button>
                     </div>
                   </div>
-
-
                 </div>
                 <div class="col-sm-11">
                <h3>${results[i].volumeInfo.title}</h3>
@@ -38,26 +34,25 @@ $(document).ready(() => {
             
             <!-- Button trigger modal -->
 
-            
             <!-- Modal -->
             <div class="modal fade" id="reviewModal" tabindex="-1" role="dialog" aria-labelledby="reviewModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="reviewModalLabel">Your Review</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <form>
-          <div class="form-group">
-            <textarea class="form-control" id="bookReview${i}"></textarea>
-            <br>
-            <button type="button" class="btn btn-primary" id="submitReview${i}" data-bookTitle="${results[i].volumeInfo.title}" data-authorName="${results[i].volumeInfo.authors}">Submit</button>
-          </div>
-        </form>
-      </div>
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="reviewModalLabel">Your Review</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <form>
+                    <div class="form-group">
+                      <textarea class="form-control" id="bookReview${i}"></textarea>
+                      <br>
+                      <button type="button" class="btn btn-primary" id="submitReview${i}" data-bookTitle="${results[i].volumeInfo.title}" data-authorName="${results[i].volumeInfo.authors}">Submit</button>
+                    </div>
+                  </form>
+                </div>
         </li>`);
                 // eslint-disable-next-line
               $(document).on("click", `#submitReview${i}`, function (event) {
@@ -72,13 +67,12 @@ $(document).ready(() => {
                         authorName: authorName,
                         review: bookReview.val(),
                     };
-                    console.log(reviewData);
                     if (
                         !reviewData.title ||
                         !reviewData.authorName ||
                         !reviewData.review
                     ) {
-                        console.log("Error!");
+                        console.log("Error! Something went wrong");
                     }
                     logReview(
                         reviewData.title,

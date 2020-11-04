@@ -50,12 +50,11 @@ module.exports = (app) => {
             const viewData = {
                 Reviews: data.map((entry) => {
                     const newData = entry.dataValues;
-                    const createdTime = moment(newData.createdAt, "YYYY-MM-DD HH:mm:ss").format("MMM Do YY");
+                    const createdTime = moment(newData.createdAt, "YYYY-MM-DD HH:mm:ss").format("MMM Do YYYY");
                     newData.createdAt = createdTime; 
                     return newData;
                 })
             };
-            console.log(viewData);
             res.render("display", viewData);
         });
     });
@@ -77,7 +76,6 @@ module.exports = (app) => {
                     return newData;
                 })
             };
-            console.log(viewData);
             res.render("display", viewData);
         });
     });

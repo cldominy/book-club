@@ -19,7 +19,6 @@ module.exports = (app) => {
     app.get("/api/search/:title", (req, res) => {
         const title = req.params.title;
         axios.get("https://www.googleapis.com/books/v1/volumes?q=" + title).then(results => {
-            // console.log(results.data.items);
             res.json(results.data.items);
         });
     });

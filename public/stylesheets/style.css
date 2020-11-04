@@ -148,6 +148,9 @@ img {vertical-align: middle;}
   margin-bottom: 20px;
 }
 
+.card{
+  margin: 10px;
+}
 .searchRows{
   padding-top: 10px;
   padding-bottom: 10px;
@@ -235,8 +238,7 @@ html {
   -o-background-size: cover;
   background-size: cover;
   background-repeat: no-repeat;
-  height: max-content;
-  position: relative;
+  height: 100%;
   background-color: rgb(241, 205, 126);
 }
 .filloutform {
