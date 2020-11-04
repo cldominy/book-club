@@ -55,7 +55,6 @@ module.exports = (app) => {
                     return newData;
                 })
             };
-            console.log(viewData);
             res.render("display", viewData);
         });
     });
@@ -77,7 +76,6 @@ module.exports = (app) => {
                     return newData;
                 })
             };
-            console.log(viewData);
             res.render("display", viewData);
         });
     });

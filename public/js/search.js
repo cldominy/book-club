@@ -6,8 +6,6 @@ $(document).ready(() => {
             url: "/api/search/" + title,
             method: "GET"
         }).then((results) => {
-        
-            console.log(results);
             for (let i = 0; i < results.length; i++) {
                 if (results[i].volumeInfo.imageLinks === undefined) {
                     results[i].volumeInfo.imageLinks = "";
@@ -69,13 +67,12 @@ $(document).ready(() => {
                         authorName: authorName,
                         review: bookReview.val(),
                     };
-                    console.log(reviewData);
                     if (
                         !reviewData.title ||
                         !reviewData.authorName ||
                         !reviewData.review
                     ) {
-                        console.log("Error!");
+                        console.log("Error! Something went wrong");
                     }
                     logReview(
                         reviewData.title,
