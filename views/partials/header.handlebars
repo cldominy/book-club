@@ -1,0 +1,47 @@
+  <header>
+    <div class="navbar-fixed">
+    <nav>
+        <div class="nav-wrapper">
+          <a href="/about" class="brand-logo left">Book Club </a>
+          <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="material-icons">menu</i></a>
+          <div>
+          <ul class="left hide-on-med-and-down">
+            <li><a href="/about" class="{{#if active_home}}active{{/if}}">Home</a></li>
+            <li><a href="/contact" class="{{#if active_contact}}active{{/if}}">Contact</a></li>
+            <li><a href="/browse" class="{{#if active_browse}}active{{/if}}">Browse</a></li>
+            <li><a href="/search" class="{{#if active_search}}active{{/if}}">Search</a></li>
+
+          </ul>
+        </div>
+          <ul class="right hide-on-med-and-down">
+            <li><a href="/signup" class="logintab {{#if active_signup}}active{{/if}}">Sign-Up</a></li>
+            <li><a href="/login" class="logintab {{#if active_login}}active{{/if}}">Log In</a></li>
+            <li><a class="dropdown-trigger profiletab hide" href="#!" data-target="dropdown1">Hello, <span class="memberName"></span><i class="material-icons right">arrow_drop_down</i></a></li>
+          </ul>
+          <ul id="dropdown1" class="dropdown-content">
+            <li><a href="/profile" class="{{#if active_profile}}active{{/if}}">My Profile</a></li>
+            <li><a href="/search" class="{{#if active_search}}active{{/if}}">Write Review</a></li>
+            <li class="divider"></li>
+            <li><a class="logouttab" href="#!">Log Out</a></li>
+          </ul>
+        
+        </div>
+      </nav>
+    </div>
+    
+      <ul class="sidenav" id="mobile-demo">
+                <li><a class="dropdown-trigger profiletab hide" href="#!" data-target="dropdown1">Hello, <span class="memberName"></span><i class="material-icons right">arrow_drop_down</i></a></li>
+        <li><a href="/signup" class="logintab {{#if active_signup}}active{{/if}}">Sign-Up</a></li>
+        <li><a href="/login" class="logintab {{#if active_login}}active{{/if}}">Log In</a></li>
+        <li><a href="/about" class="{{#if active_home}}active{{/if}}">Home</a></li>
+        <li><a href="/contact" class="{{#if active_contact}}active{{/if}}">Contact</a></li>
+        <li><a href="/browse" class="{{#if active_browse}}active{{/if}}">Browse</a></li>
+        <li><a href="/search" class="{{#if active_search}}active{{/if}}">Search</a></li>
+          </ul>
+          <ul id="dropdown1" class="dropdown-content">
+            <li><a href="/profile" class="{{#if active_profile}}active{{/if}}">My Profile</a></li>
+            <li><a href="/search" class="{{#if active_search}}active{{/if}}">Write Review</a></li>
+            <li class="divider"></li>
+            <li><a class="logouttab" href="#!">Log Out</a></li>
+      </ul>
+  </header>

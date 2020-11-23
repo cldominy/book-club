@@ -39,7 +39,7 @@ module.exports = (app) => {
     });
 
     // Route for logging user out
-    app.get("/logout", (req, res) => {
+    app.get("/api/logout", (req, res) => {
         req.logout();
         res.redirect("/");
     });
@@ -48,7 +48,7 @@ module.exports = (app) => {
     app.get("/api/user_data", (req, res) => {
         if (!req.user) {
             // The user is not logged in, send back an empty object
-            res.json({});
+            res.json("Unathorized");
         } else {
             // Otherwise send back the user's email and id
             // Sending back a password, even a hashed password, isn't a good idea

@@ -1,26 +1,33 @@
- {{>navbar   active_logintab=true}}
-<div class="container">
-        <div class="row signupBox">
-            <div class="col-md-6 col-md-offset-3">
-                <h2>Login Form</h2>
-                <form class="login">
-                    <div class="form-group">
-                        <label for="exampleInputEmail1">Email Address</label>
-                        <input type="email" class="form-control" id="email-input" placeholder="Email" />
-                    </div>
-                    <div class="form-group">
-                        <label for="exampleInputPassword1">Password</label>
-                        <input type="password" class="form-control" id="password-input" placeholder="Password" />
-                    </div>
-                    <div style="display: none" id="alert" class="alert alert-danger" role="alert">
-                        <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
-                        <span class="sr-only">Error:</span> <span class="msg"></span>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Login</button>
-                </form>
-                <br />
-                <p>Or Sign Up <a href="/"Here</a></p>
-            </div>
+ {{>header   active_login=true}}
+<main class="background">
+    <div class="container col s8">
+        <div class=" card-panel sign-card">
+        <div class="row">
+              <div class="col s12">
+                <h3 class="brand-logo center black-text">Log In</h3>
+              </div>
         </div>
+        <form class="login col s14">
+          <div class="row">
+            <div class="input-field hoverable col s12">
+              <i class="material-icons prefix">email</i>
+              <input id="email" type="email" class="validate">
+              <label for="email">Email</label>
+            </div>
+            <div class="input-field hoverable col s12">
+              <i class="material-icons prefix">vpn_key</i>
+              <input id="password" type="password" class="validate">
+              <label for="password">Password</label>
+            </div>
+
+        </div>
+<div class="row">
+    <div class="col s12">
+        <p class="left ">Or sign up <a href="/signup">here</a></p>
+    <button type="submit" class="right waves-effect waves-light btn right hoverable"><i class="large material-icons right">done</i>Login</button>
+</div>
+</div>
+        </form>
     </div>
-    </div>
+      </div>
+</main>

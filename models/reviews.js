@@ -14,6 +14,10 @@ module.exports = (sequelize, DataTypes) => {
             validate: {
                 len: [1, 128]
             }
+        },
+        name: {
+            type: DataTypes.STRING,
+            allowNull: true,
         }
     });
     Reviews.associate = (db) => {

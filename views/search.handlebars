@@ -1,18 +1,28 @@
-{{>navbar   active_createtab=true}}
-<div class="container">
-    
-<div class="row signupBox">
-	<div class="col-md-10 text-center mr-auto ml-auto">
-    <h1>Write Your Review!</h1>
-    <h4>Use the search bar below to find the book you want to review</h4>
-                    <div class="form container input-group mb-3 ">
+ {{>header   active_search=true}}
 
-                            <input class="form-control" type="text" placeholder="Book Title" aria-label="Search" id="searchBook">
-                            <div class="input-group-append">
-                                <button class="btn btn-primary my-2 my-sm-0 btn-sm" type="submit" id="submitSearch">Search!</button>
-                            </div>
-                      </div>
+<main class="background">
+  <!-- Search Bar -->
+    <div class="container col s8">
+      <div class="row">
+        <h2 class="center">Search for a Book</h2>
+        <h4 class="center">Search by book title to find a book or write a review</h4>
+        <br>
+        <div class="input-field col s12">
+          <i class="material-icons prefix">search</i>
+          <input type="text" id="searchBook" class="autocomplete">
+          <label for="searchBook">Search by Book Title</label>
+        </div>
+      </div>
+      <div class="row">
+    <div class="col s12">
+    <button type="submit" class="right waves-effect waves-light btn right hoverable" id="submitSearch"><i class="large material-icons right">done</i>search</button>
 </div>
 </div>
-    </div>
-<ul id="results" class="list-group"> </ul>
+
+      <!-- Beginning of Books being generated -->
+<div class="row" id="searchResults">
+
+</div>
+      </div>
+      <div class="modalContainer"></div>
+</main>

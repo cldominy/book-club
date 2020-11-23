@@ -32,7 +32,7 @@ $(document).ready(() => {
             username: username,
             password: password
         }).then(() => {
-            window.location.replace("/members");
+            window.location.replace("/about");
         }).catch(handleSignupErrors); // If there's an error, handle it by throwing up a bootstrap alert
     }
 

@@ -9,15 +9,23 @@ module.exports = (app) => {
     app.get("/", (req, res) => {
         // If the user already has an account send them to the members page
         if (req.user) {
-            res.render("members");
+            res.render("profile");
         }
-        res.render("signup");
+        res.render("about");
+    });
+
+    app.get("/contact", (req, res) => {
+        res.render("contact");
+    });
+
+    app.get("/about", (req, res) => {
+        res.render("about");
     });
 
     app.get("/login", (req, res) => {
         // If the user already has an account send them to the members page
         if (req.user) {
-            res.render("members");
+            res.render("profile");
         }
         res.render("login");
     });
@@ -25,45 +33,37 @@ module.exports = (app) => {
     app.get("/signup", (req, res) => {
         // If the user already has an account send them to the members page
         if (req.user) {
-            res.render("members");
+            res.render("profile");
         }
         res.render("signup");
     });
 
     // Here we've add our isAuthenticated middleware to this route.
     // If a user who is not logged in tries to access this route they will be redirected to the signup page
-    app.get("/members", isAuthenticated, (req, res) => {
-        res.render("members");
-    });
-
-    app.get("/create", isAuthenticated, (req, res) => {
-        res.render("create");
-    });
-
- 
-    app.get("/search", (req, res) => {
+    app.get("/search", isAuthenticated, (req, res) => {
         res.render("search", {books: []});
     });
 
-    app.get("/display", (req, res) => {
+    app.get("/browse", isAuthenticated, (req, res) => {
         db.Reviews.findAll().then( (data) => {
             const viewData = {
                 Reviews: data.map((entry) => {
                     const newData = entry.dataValues;
                     const createdTime = moment(newData.createdAt, "YYYY-MM-DD HH:mm:ss").format("MMM Do YYYY");
                     newData.createdAt = createdTime; 
+                    console.log(newData);
                     return newData;
                 })
             };
-            res.render("display", viewData);
+            res.render("browse", viewData);
         });
     });
 
-    app.get("/profile", (req, res) => {
+    app.get("/profile", isAuthenticated, (req, res) => {
         db.Reviews.findAll(
             {
                 where: {
-                    UserID: req.user.id
+                    UserId: req.user.id
                 },
                 include: [db.User]
             }
