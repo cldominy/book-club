@@ -79,4 +79,24 @@ module.exports = (app) => {
             res.render("profile", viewData);
         });
     });
+
+    app.get("/profile/:id", isAuthenticated, (req, res) => {
+        const { id } = req.params;
+        db.Reviews.findAll(
+            {
+                where: { UserId: id },
+                include: [db.User]
+            }
+        ).then( (data) => {
+            const viewData = {
+                Reviews: data.map((entry) => {
+                    const newData = entry.dataValues;
+                    const createdTime = moment(newData.createdAt, "YYYY-MM-DD HH:mm:ss").format("MMM Do YY");
+                    newData.createdAt = createdTime; 
+                    return newData;
+                })
+            };
+            res.render("browse", viewData);
+        });
+    });
 };
