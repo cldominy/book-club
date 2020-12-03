@@ -15,6 +15,21 @@ module.exports = (app) => {
         });
     });
 
+    app.get("/api/reviews/latest", (req, res) => {
+        const query = {};
+        if (req.query.user_id) {
+            query.UserID = req.query.user_id;
+        }
+        db.Reviews.findAll({
+            limit: 4,
+            where: query,
+            include: [db.User],
+            order: [["createdAt", "DESC"]]
+        }).then((dbReview) => {
+            res.json(dbReview);
+        });
+    });
+
     app.post("/api/reviews", isAuthenticated, (req, res) => {
         const userID = req.user.id;
         const userName = req.user.username;

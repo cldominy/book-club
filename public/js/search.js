@@ -14,24 +14,21 @@ $(document).ready(() => {
                 if (results[i].volumeInfo.imageLinks === undefined) {
                     results[i].volumeInfo.imageLinks = "";
                 }
-                $("#searchResults").append(`<div class="col s12 m6">
-                <div class="card sticky-action small" style="overflow: visible;">
-                  <div class="card-image waves-effect waves-block waves-light">
-                    <img class="activator thumbnail-img" src="${results[i].volumeInfo.imageLinks.thumbnail}" onerror="this.onerror=null; this.src='images/default.png'" />
+                $("#searchResults").append(` <div class="col s12 m6">
+                <div class="card small horizontal">
+                  <div class="card-image">
+                  <img class="thumbnail-img" src="${results[i].volumeInfo.imageLinks.thumbnail}" onerror="this.onerror=null; this.src='images/default.png'" />
                   </div>
-                  <div class="card-content">
-                    <span class="card-title activator grey-text text-darken-4 truncate"><i class="material-icons right">more_vert</i>${results[i].volumeInfo.title}</span>
-                  </div>
-            
-                  <div class="card-action">
+                  <div class="card-stacked">
+                    <div class="card-content">
+                    <p class="card-title grey-text text-darken-4 ">${results[i].volumeInfo.title}</p>
+                    <p class="scroll-box"><span class="authorStyle">By ${results[i].volumeInfo.authors}</span>
+                    <br>
+                    ${results[i].volumeInfo.description}</p>
+                    </div>
+                    <div class="card-action searchAction">
                     <a class="modal-trigger" href="#modal-${i}">Write a Review</a>
-                    <a href="#">Browse Reviews</a>
-                  </div>
-            
-                  <div class="card-reveal" style="display: none; transform: translateY(0%);">
-                    <span class="card-title grey-text text-darken-4">${results[i].volumeInfo.title}<i class="material-icons right">close</i></span>
-                    <p class="authorStyle">By ${results[i].volumeInfo.authors}</p>
-                    <p>${results[i].volumeInfo.description}</p>
+                    </div>
                   </div>
                 </div>
               </div>`);
@@ -54,15 +51,8 @@ $(document).ready(() => {
                     </div>
                     </div>`);
                 $(".modal").modal();
-                // eslint-disable-next-line
-                // $(document).on("click", `#writeReview${i}`, function (event) {
-                //     event.preventDefault();
-                //     event.stopPropagation();
-                //     $(`#hiddenForm${i}`).toggle();
-                // });
 
-                // eslint-disable-next-line
-              $(document).on("click", `#submitReview${i}`, function (event) {
+                $(document).on("click", `#submitReview${i}`, function (event) {
                     console.log("yes");
                     event.preventDefault();
                     event.stopPropagation();

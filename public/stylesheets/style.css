@@ -118,3 +118,17 @@ main {
     .hide{
       display: none;
     }
+
+    .thumbnail-img{
+      width: 100%;
+    }
+
+    .scroll-box {
+      overflow-y: scroll;
+      height: 75%;
+      padding: 1rem
+  }
+
+  .searchAction{
+    position: static !important;
+  }
